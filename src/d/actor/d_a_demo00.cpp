@@ -4,7 +4,11 @@
 //
 
 #include "d/actor/d_a_demo00.h"
+#include "d/d_demo.h"
 #include "d/d_procname.h"
+#include "d/d_com_inf_game.h"
+#include "JSystem/JStudio/JStudio/stb.h"
+#include "JSystem/JUtility/JUTFader.h"
 
 /* 800E595C-800E598C       .text reset__16daDemo00_resID_cFv */
 void daDemo00_resID_c::reset() {
@@ -67,13 +71,267 @@ BOOL daDemo00_c::draw() {
 }
 
 /* 800E7204-800E7224       .text daDemo00_Execute__FP10daDemo00_c */
-static BOOL daDemo00_Execute(daDemo00_c*) {
-    /* Nonmatching */
+static BOOL daDemo00_Execute(daDemo00_c* demo) {
+    demo->execute();
 }
 
 /* 800E7224-800E78A0       .text execute__10daDemo00_cFv */
 BOOL daDemo00_c::execute() {
-    /* Nonmatching */
+    //     char cVar1;
+    // u8 bVar2;
+    // bool bVar3;
+    // u32 uVar5;
+    // JUTFader *pJVar6;
+    // _GXColor *p_Var7;
+    // uint uVar8;
+    // char cVar9;
+    // void *local_e4;
+    // _GXColor local_e0;
+    // char *local_dc;
+    // void *local_d8;
+    // void *local_d4;
+    // void *local_d0;
+    // void *local_cc;
+    // void *local_c8;
+    // uint *local_c4;
+    // uint *local_c0;
+    // _GXColor local_bc;
+    // char *local_b8;
+    // char *local_b4;
+    // uint *local_b0;
+    // char *local_ac;
+    // uint *local_a8;
+    // char *local_a4;
+    // cXyz local_a0;
+    // cXyz local_94;
+    // JStudio::stb::data::TParse_TParagraph_data::TData local_88 [8];
+    // int local_80;
+    // uint *local_7c;
+    // int local_78;
+    // JStudio::stb::data::TParse_TParagraph_data::TData local_74 [8];
+    // int local_6c;
+    // char *local_68;
+    // int local_64;
+    // JStudio::stb::data::TParse_TParagraph_data::TData local_60 [12];
+    // u8 *local_54;
+    // int local_50;
+    // JStudio::stb::data::TParse_TParagraph_data::TData local_4c [12];
+    // char *local_40;
+    // int local_3c;
+    // JStudio::stb::data::TParse_TParagraph_data::TData local_38 [12];
+    // u8 *local_2c;
+    // int local_28;
+    // JStudio::stb::data::TParse_TParagraph_data::TData local_24 [12];
+    // u8 *local_18;
+    // int local_14;
+    
+    // this->field_0x29e = 0;
+    // dDemo_actor_c *demoActor = dComIfGp_demo_get()->mDemoObj.getActor(this->demoActorID);
+    // if (demoActor != NULL) {
+    //     if ((demoActor->mFlags & 0x10) != 0) {
+    //         *(ulong *)&this->field_0x2a0 = demoActor->mShape;
+    //     }
+    //     if ((demoActor->mFlags & 0x20) != 0) {
+    //         *(ulong *)&this->field_0x2a4 = demoActor->mNextBckId;
+    //     }
+    //     if ((demoActor->mFlags & 1) != 0) {
+    //         cVar9 = this->field_0x29c;
+    //         this->field_0x29c = (char)demoActor->stbDataSize;
+    //         cVar1 = this->field_0x29c;
+    //         if (cVar1 == '\x04') {
+    //             demoActor->stbData->getData(local_24);
+    //             if (local_24[0] != (TData)0x0) {
+    //                 bVar3 = false;
+    //                 if ((local_18 != NULL) && (local_24[0] == (TData)0x31) && (local_14 != 0)) {
+    //                     bVar3 = true;
+    //                 }
+    //                 if (bVar3) {
+    //                     bVar2 = *local_18;
+    //                     if (bVar2 > 0x31) {
+    //                         uVar5 = JUTAssertion::getSDevice();
+    //                         JUTAssertion::showAssert
+    //                                   (uVar5,"d_a_demo00.cpp",0x340,"argID < (sizeof(l_eventBit)/sizeof(u16))");
+    //                         m_Do_printf::OSPanic("d_a_demo00.cpp",0x340,&DAT_8035bd7f);
+    //                     }
+    //                     if (*(ushort *)(l_eventBit$localstatic3$execute + (uint)bVar2 * 2) != 0xffff) {
+    //                         dSv_event_c::onEventBit
+    //                                   (&d_com_inf_game::g_dComIfG_gameInfo.info.mSavedata.mEvent,
+    //                                    *(ushort *)(l_eventBit$localstatic3$execute + (uint)bVar2 * 2));
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         else if (cVar1 == '\x05') {
+    //             local_cc = demoActor->stbData;
+    //             JStudio::stb::data::TParse_TParagraph_data::getData((JStudio::stb::data::TParse_TParagraph_data::TData *)&local_cc,local_38);
+    //             if (local_38[0] != (TData)0x0) {
+    //                 bVar3 = false;
+    //                 if ((local_2c != NULL) && (local_38[0] == (TData)0x31) && (local_28 != 0)) {
+    //                     bVar3 = true;
+    //                 }
+    //                 if (bVar3) {
+    //                     bVar2 = *local_2c;
+    //                     if (bVar2 > 9) {
+    //                         uVar5 = JUTAssertion::getSDevice();
+    //                         JUTAssertion::showAssert
+    //                                   (uVar5,"d_a_demo00.cpp",0x35a,"argID < (sizeof(l_itemNo)/sizeof(u8))");
+    //                         m_Do_printf::OSPanic("d_a_demo00.cpp",0x35a,&DAT_8035bd7f);
+    //                     }
+    //                     if (l_itemNo$localstatic4$execute[bVar2] != (code)0xff) {
+    //                         d_item::execItemGet((dItem_data__ItemNo)l_itemNo$localstatic4$execute[bVar2]);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         else if (cVar1 == '\x06') {
+    //             local_d0 = demoActor->stbData;
+    //             JStudio::stb::data::TParse_TParagraph_data::getData((JStudio::stb::data::TParse_TParagraph_data::TData *)&local_d0,local_4c);
+    //             if (local_4c[0] != (TData)0x0) {
+    //                 bVar3 = false;
+    //                 if ((local_40 != NULL) && (local_4c[0] == (TData)0x21) && (local_3c != 0)) {
+    //                     bVar3 = true;
+    //                 }
+    //                 if (bVar3) {
+    //                     mDoGph_gInf_c::mMonotoneRateSpeed = (short)*local_40;
+    //                 }
+    //             }
+    //         }
+    //         else if (cVar1 == '\a') {
+    //             local_d4 = demoActor->stbData;
+    //             JStudio::stb::data::TParse_TParagraph_data::getData((JStudio::stb::data::TParse_TParagraph_data::TData *)&local_d4,local_60);
+    //             if (local_60[0] != (TData)0x0) {
+    //                 bVar3 = false;
+    //                 if ((local_54 != NULL) && (local_60[0] == (TData)0x31) && (local_50 != 0)) {
+    //                     bVar3 = true;
+    //                 }
+    //                 if (bVar3) {
+    //                     uVar8 = (uint)*local_54;
+    //                     if (uVar8 < 100) {
+    //                         local_94.x = 0.0;
+    //                         local_94.y = 1.0;
+    //                         local_94.z = 0.0;
+    //                         dVibration_c::StartShock
+    //                                   (&d_com_inf_game::g_dComIfG_gameInfo.play.mVibration,uVar8,1,&local_94);
+    //                     }
+    //                     else if (uVar8 == 0xff) {
+    //                         dVibration_c::StopQuake(&d_com_inf_game::g_dComIfG_gameInfo.play.mVibration,1);
+    //                     }
+    //                     else {
+    //                         local_a0.x = 0.0;
+    //                         local_a0.y = 1.0;
+    //                         local_a0.z = 0.0;
+    //                         dVibration_c::StartQuake
+    //                                   (&d_com_inf_game::g_dComIfG_gameInfo.play.mVibration,uVar8 - 100,1,&local_a0);
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         else if ((cVar1 == '\t') || (cVar1 == '\n')) {
+    //             local_d8 = demoActor->stbData;
+    //             JStudio::stb::data::TParse_TParagraph_data::getData((JStudio::stb::data::TParse_TParagraph_data::TData *)&local_d8,local_74);
+    //             if (local_74[0] != (TData)0x0) {
+    //                 bVar3 = false;
+    //                 if ((local_68 != NULL) && (local_74[0] == (TData)0x21) && (local_64 != 0)) {
+    //                     bVar3 = true;
+    //                 }
+    //                 if (bVar3) {
+    //                     local_a4 = local_68;
+    //                     cVar1 = *local_68;
+    //                     if ((this->field_0x29c != cVar9) || (cVar1 != this->field_0x29d)) {
+    //                         this->field_0x29d = cVar1;
+    //                         cVar9 = '\0';
+    //                         local_dc = local_68 + local_6c;
+    //                         local_b8 = local_68 + 1;
+    //                         if (local_dc != local_b8) {
+    //                             cVar9 = *local_b8;
+    //                         }
+    //                         local_b4 = local_dc;
+    //                         local_ac = local_dc;
+    //                         local_a4 = local_b8;
+    //                         if (cVar1 == '\0') {
+    //                             pJVar6 = JFWDisplay::sManager->mpFader;
+    //                             if (pJVar6 != NULL) {
+    //                                 (**(code **)(*(int *)pJVar6 + 0x10))(pJVar6,(int)cVar9);
+    //                             }
+    //                         }
+    //                         else {
+    //                             pJVar6 = JFWDisplay::sManager->mpFader;
+    //                             if (pJVar6 != NULL) {
+    //                                 (**(code **)(*(int *)pJVar6 + 0xc))(pJVar6,(int)cVar9);
+    //                             }
+    //                         }
+    //                         pJVar6 = mDoGph_gInf_c::mFader;
+    //                         p_Var7 = &d_com_inf_game::g_saftyWhiteColor;
+    //                         if (this->field_0x29c == '\t') {
+    //                             p_Var7 = &d_com_inf_game::g_blackColor;
+    //                         }
+    //                         local_e0 = *p_Var7;
+    //                         mDoGph_gInf_c::mFader[0xc] = (JUTFader)local_e0.r;
+    //                         pJVar6[0xd] = (JUTFader)local_e0.g;
+    //                         pJVar6[0xe] = (JUTFader)local_e0.b;
+    //                         pJVar6[0xf] = (JUTFader)local_e0.a;
+    //                         local_bc = local_e0;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         else {
+    //             local_e4 = demoActor->stbData;
+    //             JStudio::stb::data::TParse_TParagraph_data::getData((JStudio::stb::data::TParse_TParagraph_data::TData *)&local_e4,local_88);
+    //             if (local_88[0] != (TData)0x0) {
+    //                 bVar3 = false;
+    //                 if ((local_7c != NULL) && (local_88[0] == (TData)0x33) && (local_78 != 0)) {
+    //                     bVar3 = true;
+    //                 }
+    //                 if (bVar3) {
+    //                     uVar8 = 0xffffffff;
+    //                     local_a8 = local_7c;
+    //                     while( true ) {
+    //                         local_c0 = local_7c + local_80;
+    //                         local_c4 = local_a8;
+    //                         local_b0 = local_c0;
+    //                         if (local_c0 == local_a8) break;
+    //                         if ((int)uVar8 < 0) {
+    //                             uVar8 = *local_a8;
+    //                         }
+    //                         else {
+    //                             if (uVar8 == 0) {
+    //                                 this->field18_0x2ac = *local_a8;
+    //                             }
+    //                             else if (uVar8 == 1) {
+    //                                 this->field19_0x2b0 = *local_a8;
+    //                             }
+    //                             else if (uVar8 == 2) {
+    //                                 *(uint *)&this->field_0x2c0 = *local_a8;
+    //                             }
+    //                             else if (uVar8 == 3) {
+    //                                 *(uint *)&this->field_0x2bc = *local_a8;
+    //                             }
+    //                             else if (uVar8 == 4) {
+    //                                 this->field20_0x2b4 = *local_a8;
+    //                             }
+    //                             else if (uVar8 == 5) {
+    //                                 *(uint *)&this->field_0x2c4 = *local_a8;
+    //                             }
+    //                             else if (uVar8 == 6) {
+    //                                 this->field19_0x2b0 = *local_a8 | 0x10000000;
+    //                             }
+    //                             else if (uVar8 == 7) {
+    //                                 this->field20_0x2b4 = *local_a8 | 0x10000000;
+    //                             }
+    //                             uVar8 = 0xffffffff;
+    //                         }
+    //                         local_a8 = local_a8 + 1;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     Runtime.PPCEABI.H::__ptmf_scall(this,demoActor);
+    //     return 1;
+    // }
+    // f_op_actor_mng::fopAcM_delete((base_process_class *)this);
+    // return 1;
 }
 
 /* 800E78A0-800E78A8       .text daDemo00_IsDelete__FP10daDemo00_c */
@@ -87,8 +345,16 @@ static BOOL daDemo00_Delete(daDemo00_c*) {
 }
 
 /* 800E78D0-800E7964       .text daDemo00_Create__FP10fopAc_ac_c */
-static s32 daDemo00_Create(fopAc_ac_c*) {
+static s32 daDemo00_Create(fopAc_ac_c *i_this) {
     /* Nonmatching */
+    daDemo00_c* a_this = (daDemo00_c*)i_this;
+    fopAcM_SetupActor(i_this, daDemo00_c);
+
+    dKy_tevstr_init(&a_this->tevStr, (s16)dStage_roomControl_c::mStayNo, 0xff);
+    a_this->mActionFunc = &daDemo00_c::actStandby;
+    a_this->mResId.reset();
+    a_this->unk29D = -1;
+  return 4;
 }
 
 static actor_method_class l_daDemo00_Method = {
